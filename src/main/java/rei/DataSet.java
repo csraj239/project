@@ -15,20 +15,24 @@ public class DataSet {
 			for (char c : sampleWord.toLowerCase().toCharArray()) {
 				++localCharFreq[c - 'a'];
 			}
+			if(sampleWord.length()<10) {
+				wordlist = sol.getAllWords(sampleWord);
+				for (int i = 0; i < wordlist.size(); i++) {
 
-			wordlist = sol.getAllWords(sampleWord);
-			for (int i = 0; i < wordlist.size(); i++) {
-
-				if (onlineUtil.isEnglishWord(wordlist.get(i)) == true) {
-					success = true;
-					System.out.println(wordlist.get(i));
+					if (onlineUtil.isEnglishWord(wordlist.get(i)) == true) {
+						success = true;
+						System.out.println(wordlist.get(i));
+					}
+				}
+				if (success == false) {
+					System.out.println("No word avialable in dictionary");
 				}
 			}
-			if (success == false) {
-				System.out.println("No word avialable in dictionary");
+			else {
+				System.out.println("Input should be alphabet and less than 10 characters");
 			}
 		} catch (Exception e) {
-			System.out.println("Not a valid input");
+			System.out.println("Not a valid input. Input should be alphabets only");
 		}
 	}
 }

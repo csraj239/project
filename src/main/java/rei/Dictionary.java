@@ -1,7 +1,6 @@
 package rei;
 
 public class Dictionary {
-	int[] charFreq = new int[26];
 	String Dict[] = { "work", "king", "row", "run", "ring", "know", "go" };
 	
  	// This method will accept a string and return boolean value if any of the word

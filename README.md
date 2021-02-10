@@ -9,10 +9,11 @@ Using Java, find all of the English words in a given String.  For example, if yo
 
 ## Assumptions 
  * Words are matched from Mock Dictionary with limited words to test the logic only.
+ * Input string is limited to less than 10 characters.
 
 ## Steps:
 * Import this project as maven project
-* Run TestRunner.java that contains 8 test scenarios
+* Run TestRunner.java that contains 9 test scenarios
 * List of words found will be printed in the console in case of success
 * Custom Message will be printed in the console in case of no words found
 * Custom Message will be printed in the console in case of invalid input
