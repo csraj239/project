@@ -8,7 +8,7 @@ Using Java, find all of the English words in a given String.  For example, if yo
 2. Maven 3.5.0+
 
 ## Assumptions 
- * Words are matched from Mock Dictionary with limited words to test the logic only.
+ * Words are matched from Mock Dictionary with limited words and is not case sensitive.
  * Input string is limited to less than 10 characters.
 
 ## Steps:
