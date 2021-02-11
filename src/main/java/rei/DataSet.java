@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class DataSet {
 
-	public void getDataSet(String sampleWord) {
+	public ArrayList<String> getDataSet(String sampleWord) {
 		Solution sol = new Solution();
 		Dictionary onlineUtil = new Dictionary();
 		ArrayList<String> wordlist = new ArrayList<>();
+		ArrayList<String> dicionarylist = new ArrayList<>();
 		boolean success = false;
-
 		try {
 			int[] localCharFreq = new int[26];
 			for (char c : sampleWord.toLowerCase().toCharArray()) {
@@ -18,10 +18,22 @@ public class DataSet {
 			if(sampleWord.length()<10) {
 				wordlist = sol.getAllWords(sampleWord);
 				for (int i = 0; i < wordlist.size(); i++) {
-
+					boolean duplicate = false;
 					if (onlineUtil.isEnglishWord(wordlist.get(i)) == true) {
 						success = true;
-						System.out.println(wordlist.get(i));
+						if(dicionarylist.size()<1) {
+							dicionarylist.add(wordlist.get(i));
+						}
+						else {
+							for (int j=0; j < dicionarylist.size(); j++) {
+								if(dicionarylist.get(j).equalsIgnoreCase(wordlist.get(i))) {
+									duplicate = true;
+								}
+							}
+							if(duplicate == false) {
+								dicionarylist.add(wordlist.get(i));
+							}
+						}
 					}
 				}
 				if (success == false) {
@@ -34,5 +46,6 @@ public class DataSet {
 		} catch (Exception e) {
 			System.out.println("Not a valid input. Input should be alphabets only");
 		}
+		return dicionarylist;
 	}
 }

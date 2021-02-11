@@ -13,7 +13,7 @@ Using Java, find all of the English words in a given String.  For example, if yo
 
 ## Steps:
 * Import this project as maven project
-* Run TestRunner.java that contains 9 test scenarios
+* Run TestRunner.java that contains 10 test scenarios
 * List of words found will be printed in the console in case of success
 * Custom Message will be printed in the console in case of no words found
 * Custom Message will be printed in the console in case of invalid input

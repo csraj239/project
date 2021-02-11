@@ -5,32 +5,56 @@ public class TestRunner {
 	public static void main(String args[]) {
 		DataSet ds = new DataSet();
 		
-		// Valid String all small
-		ds.getDataSet("working");
+		// Case-1: Valid String all small
+		System.out.println("====== ** Small case ** ======");
+		System.out.println(ds.getDataSet("working"));
+		System.out.println("");
 	
-//		// Valid String all Capital
-//		ds.getDataSet("WORKING");
+		// Case-2: Valid String all Capital
+		System.out.println("====== ** Capital case ** ======");
+		System.out.println(ds.getDataSet("WORKING"));
+		System.out.println("");
 
-//		// Valid String First letter Capital
-//		ds.getDataSet("Working");
+		// Case-3: Valid String First letter Capital
+		System.out.println("====== ** First Letter Capital case ** ======");
+		System.out.println(ds.getDataSet("Working"));
+		System.out.println("");
 		
-//		// Valid String no match found
-//		ds.getDataSet("abcd");
+		// Case-4: Valid String for duplicate words
+		System.out.println("====== ** Duplicate words case ** ======");
+		System.out.println(ds.getDataSet("workingw"));
+		System.out.println("");
 		
-//      // Valid String with 11 characters
-//		ds.getDataSet("aboveground");
+		// Case-5: Valid String no match found
+		System.out.println("====== ** No match found ** ======");
+		System.out.println(ds.getDataSet("abcd"));
+		System.out.println("");
 		
-//		// Alpha numberic string
-//		ds.getDataSet("run123");
+        // Case-6: Valid String with 11 characters
+		System.out.println("====== ** Character count above limit ** ======");
+		System.out.println(ds.getDataSet("aboveground"));
+		System.out.println("");
+		
+		// Case-7: Alpha numberic string
+		System.out.println("====== ** Alpha Numeric case ** ======");
+		System.out.println(ds.getDataSet("run123"));
+		System.out.println("");
 	
-//		// String with special characters
-//		ds.getDataSet("run@#$");
+		// Case-8: String with special characters
+		System.out.println("====== ** Special character case ** ======");
+		System.out.println(ds.getDataSet("run@#$"));
+		System.out.println("");
 		
-//		// String with null value
-//		ds.getDataSet(null);
+		// Case-9: String with null value
+		System.out.println("====== ** Null value case ** ======");
+		System.out.println(ds.getDataSet(null));
+		System.out.println("");
 		
-//		// Empty String
-//		ds.getDataSet(" ");
+		// Case-10: Empty String
+		System.out.println("====== ** Empty string case ** ======");
+		System.out.println(ds.getDataSet(" "));
+		System.out.println("");
+		
 
 	}
 }
