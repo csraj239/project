@@ -1,14 +1,16 @@
 package rei;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DataSet {
 
-	public ArrayList<String> getDataSet(String sampleWord) {
+	public Set<String> getDataSet(String sampleWord) {
 		Solution sol = new Solution();
 		Dictionary onlineUtil = new Dictionary();
 		ArrayList<String> wordlist = new ArrayList<>();
-		ArrayList<String> dicionarylist = new ArrayList<>();
+		Set<String> dicionarylist = new HashSet<>();
 		boolean success = false;
 		try {
 			int[] localCharFreq = new int[26];
@@ -18,22 +20,9 @@ public class DataSet {
 			if(sampleWord.length()<10) {
 				wordlist = sol.getAllWords(sampleWord);
 				for (int i = 0; i < wordlist.size(); i++) {
-					boolean duplicate = false;
 					if (onlineUtil.isEnglishWord(wordlist.get(i)) == true) {
+						dicionarylist.add(wordlist.get(i));
 						success = true;
-						if(dicionarylist.size()<1) {
-							dicionarylist.add(wordlist.get(i));
-						}
-						else {
-							for (int j=0; j < dicionarylist.size(); j++) {
-								if(dicionarylist.get(j).equalsIgnoreCase(wordlist.get(i))) {
-									duplicate = true;
-								}
-							}
-							if(duplicate == false) {
-								dicionarylist.add(wordlist.get(i));
-							}
-						}
 					}
 				}
 				if (success == false) {
